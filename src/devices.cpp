@@ -46,7 +46,7 @@ pros::Controller master(pros::E_CONTROLLER_MASTER);
 Drive chassis (
   // Left Chassis Ports (negative port will reverse it!)
   //   the first port is the sensored port (when trackers are not used!)
-  {16, 18, -19}
+  {-16, -18, 19}
 
   // Right Chassis Ports (negative port will reverse it!)
   //   the first port is the sensored port (when trackers are not used!)
