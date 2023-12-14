@@ -12,7 +12,7 @@
 // . . .
 void togglePto();
 void setStickToHold();
-void setIntakeToCoast();
+void setStickToCoast();
 void stickUp();
 void stickDown();
 void stickReset();

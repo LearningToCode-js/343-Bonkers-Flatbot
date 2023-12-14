@@ -9,6 +9,7 @@ bool intakeOut = false;
 bool ptoOn4bar = false;
 bool isFlywheelForward = false;
 bool parkOut = false;
+bool stickCoast = false;
 // this stuff is for example autos, you should get rid of this and add your own devices here
 
 pros::ADIDigitalOut wing1('B');

@@ -144,6 +144,16 @@ void opcontrol() {
             flywheelReset();
         }
 
+        if (master.get_digital(pros::E_CONTROLLER_DIGITAL_B)) {
+          stickCoast = !stickCoast;
+          if (stickCoast) {
+            setStickToCoast();
+          } else {
+            setStickToHold();
+          }
+          pros::delay(200);
+        }
+
         if (master.get_digital(pros::E_CONTROLLER_DIGITAL_R1)) {
             stickUp();
         } else if (master.get_digital(pros::E_CONTROLLER_DIGITAL_R2)) {

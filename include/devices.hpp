@@ -29,6 +29,7 @@ extern bool intakeOut;
 extern bool ptoOn4bar;
 extern bool isFlywheelForward;
 extern bool parkOut;
+extern bool stickCoast;
 
 // extern lemlib::Chassis chassis;
 extern Drive chassis;

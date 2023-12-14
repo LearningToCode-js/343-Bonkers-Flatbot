@@ -72,7 +72,7 @@ void setStickToHold() {
   // intake.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD); // putting this here because the intake is the same as 4b motor
 }
 
-void setIntakeToCoast() {
+void setStickToCoast() {
   stick.set_brake_mode(pros::E_MOTOR_BRAKE_COAST); 
   // fourBar.set_brake_mode(pros::E_MOTOR_BRAKE_COAST); // putting this here because the intake is the same as 4b motor
 }
