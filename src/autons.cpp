@@ -116,15 +116,14 @@ void skills() {
 void offense() {
        // Start below bar with preload on flat side
     // Drive back a little
-    chassis.set_drive_pid(-5, DRIVE_SPEED); // Adjust distance as needed
-    chassis.wait_until(-4);
-
+    // stickDown();
+    chassis.set_drive_pid(-25, DRIVE_SPEED); // Adjust distance as needed
+    chassis.wait_until(-23);
+    // stickReset();
     // Clamp down on triball underneath bar
-    stickDown(); // Placeholder function for clamping action
+     // Placeholder function for clamping action
 
     // Drive backwards
-    chassis.set_drive_pid(-20, DRIVE_SPEED); // Adjust distance as needed
-    chassis.wait_until(-18); // Cumulative distance
 
     // Turn -45 degrees
     chassis.set_turn_pid(-45, TURN_SPEED);
@@ -135,7 +134,7 @@ void offense() {
     chassis.wait_until(-13);
 
     // Turn -45 degrees
-    chassis.set_turn_pid(-45, TURN_SPEED); // Cumulative angle
+    chassis.set_turn_pid(-90, TURN_SPEED); // Cumulative angle
     chassis.wait_until(-43);
 
     // Drive backwards and go forward a little
@@ -145,7 +144,7 @@ void offense() {
     chassis.wait_until(5);
 
     // Turn 180 degrees
-    chassis.set_turn_pid(180, TURN_SPEED); // Cumulative angle (now at 0)
+    chassis.set_turn_pid(90, TURN_SPEED); // Cumulative angle (now at 0)
     chassis.wait_until(177);
 
     // Drive forward a good bit and then drive back
@@ -156,7 +155,7 @@ void offense() {
 
     // Turn to face center middle triball
     // Assuming specific angle needed here
-    chassis.set_turn_pid(45, TURN_SPEED); // Replace with actual angle
+    chassis.set_turn_pid(0, TURN_SPEED); // Replace 45 with actual bearing
     chassis.wait_until(43);
 
     // Drive forward while raising stick
@@ -189,7 +188,7 @@ void offense() {
 
     // Turn clockwise to face final ball
     // Assuming specific angle needed here
-    chassis.set_turn_pid(30, TURN_SPEED);
+    chassis.set_turn_pid(30, TURN_SPEED); //replace 30 with bearing
     chassis.wait_until(28);
 
     // Drive forward while raising arm
@@ -202,15 +201,19 @@ void offense() {
     pros::delay(100);
 
     // Turn 180 degrees
-    chassis.set_turn_pid(182, TURN_SPEED);
+    chassis.set_turn_pid(30, TURN_SPEED); //replace 30 with proper bearing
     chassis.wait_until(180); // Cumulative angle
 
     // Drive forward at full speed while raising arm
     stickUp();
-    chassis.set_drive_pid(30, 127); // Using DRIVE_SPEED for full speed
+    chassis.set_drive_pid(30, DRIVE_SPEED); // Using DRIVE_SPEED for full speed
     chassis.wait_until(28);
     pros::delay(500);
     stickReset();
+
+    //drive back for safety
+    chassis.set_drive_pid(-30, DRIVE_SPEED);
+    chassis.wait_drive(); //so we don't get stuck in goal
     // End of autonomous phase
 
     //start below bar with preload on flat side
@@ -243,7 +246,7 @@ void offense() {
 void defense() {
     chassis.set_drive_pid(-50, DRIVE_SPEED); // Adjust distance as needed
     chassis.wait_until(-47);
-    chassis.set_swing_pid(RIGHT_SWING, -90, TURN_SPEED);
+    chassis.set_swing_pid(RIGHT_SWING, 90, TURN_SPEED);
     chassis.wait_until(-44);
     toggleWing();
     chassis.wait_until(-88);
@@ -285,7 +288,7 @@ void defense() {
 
     
 
-    //start facing 90 degrees 
+    //start facing 90 degrees (bearing) 
     //drive backward
     //swerve so that you are as close to center and to goal as possible
     //extend wings

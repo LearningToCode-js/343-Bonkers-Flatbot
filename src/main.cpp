@@ -28,12 +28,13 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.add_autons({
-    Auton("offense", offense),
+    Auton("offense", offense),     
+    Auton("AMONG IS SO SUS", troll),
+    Auton("safe defense", defensesafe),
+    
     Auton("defense full", defense),
     Auton("defense qual", defenseQual),
-    Auton("safe defense", defensesafe),
-    Auton("Nothing", doNothing),
-    Auton("AMONG IS SO SUS", troll)
+    Auton("Nothing", doNothing)
   });
 
   // Initialize chassis and auton selector
@@ -85,7 +86,7 @@ void autonomous() {
   chassis.reset_gyro(); // Reset gyro position to 0
   chassis.reset_drive_sensor(); // Reset drive sensors to 0
   chassis.set_drive_brake(MOTOR_BRAKE_HOLD); // Set motors to hold.  This helps autonomous consistency.
-  setStickToHold();
+  setStickToCoast();
   ez::as::auton_selector.call_selected_auton(); // Calls selected auton from autonomous selector.
 }
 

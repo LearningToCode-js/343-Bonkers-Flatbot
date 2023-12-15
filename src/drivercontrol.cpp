@@ -96,7 +96,12 @@ void stickDown() {
 }
 
 void stickReset() {
-  stick.move_velocity(0);
+  if (stickCoast) {
+    stick = 0;
+  } else if (!stickCoast){
+    stick.move_velocity(0);
+  }
+  
 }
 
 void flywheelForward() {

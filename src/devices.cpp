@@ -39,7 +39,7 @@ pros::Motor rightTop(8, pros::E_MOTOR_GEARSET_06, false);
 pros::MotorGroup left_side_motors({leftFront, leftBack, leftTop});
 pros::MotorGroup right_side_motors({rightFront, rightFront, rightTop});
 
-pros::Imu inertial_sensor(19); 
+pros::Imu inertial_sensor(11); 
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
@@ -54,7 +54,7 @@ Drive chassis (
   ,{6, 8, -9}
 
   // IMU Port
-  ,19
+  ,11
 
   // Wheel Diameter (Remember, 4" wheels are actually 4.125!)
   //    (or tracking wheel diameter)
