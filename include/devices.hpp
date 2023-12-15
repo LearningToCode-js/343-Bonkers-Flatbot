@@ -22,13 +22,13 @@ extern pros::ADIDigitalOut wing2;
 extern pros::ADIDigitalOut intake1;
 extern pros::ADIDigitalOut intake2;
 extern pros::ADIDigitalOut pto;
-extern pros::ADIDigitalOut park;
+extern pros::ADIDigitalOut ratchet;
 
 extern bool wingsOut;
 extern bool intakeOut;
 extern bool ptoOn4bar;
 extern bool isFlywheelForward;
-extern bool parkOut;
+extern bool ratchetOut;
 extern bool stickCoast;
 
 // extern lemlib::Chassis chassis;

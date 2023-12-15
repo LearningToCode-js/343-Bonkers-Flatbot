@@ -34,9 +34,9 @@ void exit_condition_defaults() {
 }
 
 void modified_exit_condition() {
-  chassis.set_exit_condition(chassis.turn_exit, 100, 3, 500, 7, 500, 500);
-  chassis.set_exit_condition(chassis.swing_exit, 100, 3, 500, 7, 500, 500);
-  chassis.set_exit_condition(chassis.drive_exit, 80, 50, 300, 150, 500, 500);
+  chassis.set_exit_condition(chassis.turn_exit, 50, 3, 50, 7, 50, 300);
+  chassis.set_exit_condition(chassis.swing_exit, 50, 3, 50, 7, 50, 300);
+  chassis.set_exit_condition(chassis.drive_exit, 50, 50, 50, 150, 50, 300);
 }
 
 void doNothing() {}
@@ -117,8 +117,13 @@ void offense() {
        // Start below bar with preload on flat side
     // Drive back a little
     // stickDown();
-    chassis.set_drive_pid(-25, DRIVE_SPEED); // Adjust distance as needed
-    chassis.wait_until(-23);
+    stickUp();
+    pros::delay(20);
+    stickDown();
+    chassis.set_drive_pid(-32, DRIVE_SPEED); // Adjust distance as needed
+    chassis.wait_until(-5);
+    stickReset();
+    chassis.wait_until(-30);
     // stickReset();
     // Clamp down on triball underneath bar
      // Placeholder function for clamping action
@@ -135,7 +140,7 @@ void offense() {
 
     // Turn -45 degrees
     chassis.set_turn_pid(-90, TURN_SPEED); // Cumulative angle
-    chassis.wait_until(-43);
+    chassis.wait_until(-88);
 
     // Drive backwards and go forward a little
     chassis.set_drive_pid(-20, DRIVE_SPEED);
@@ -145,7 +150,7 @@ void offense() {
 
     // Turn 180 degrees
     chassis.set_turn_pid(90, TURN_SPEED); // Cumulative angle (now at 0)
-    chassis.wait_until(177);
+    chassis.wait_until(88);
 
     // Drive forward a good bit and then drive back
     chassis.set_drive_pid(20, DRIVE_SPEED);
@@ -156,12 +161,12 @@ void offense() {
     // Turn to face center middle triball
     // Assuming specific angle needed here
     chassis.set_turn_pid(0, TURN_SPEED); // Replace 45 with actual bearing
-    chassis.wait_until(43);
+    chassis.wait_drive();
 
     // Drive forward while raising stick
     stickUp(); // Placeholder function for raising stick
     chassis.set_drive_pid(30, DRIVE_SPEED);
-    chassis.wait_until(14);
+    chassis.wait_until(28);
     stickDown();
     chassis.wait_until(28);
     pros::delay(100);
@@ -184,7 +189,7 @@ void offense() {
 
     // Drive forward a good bit
     chassis.set_drive_pid(10, DRIVE_SPEED);
-    chassis.wait_until(7);
+    chassis.wait_until(8);
 
     // Turn clockwise to face final ball
     // Assuming specific angle needed here
@@ -202,7 +207,7 @@ void offense() {
 
     // Turn 180 degrees
     chassis.set_turn_pid(30, TURN_SPEED); //replace 30 with proper bearing
-    chassis.wait_until(180); // Cumulative angle
+    chassis.wait_until(28); // Cumulative angle
 
     // Drive forward at full speed while raising arm
     stickUp();

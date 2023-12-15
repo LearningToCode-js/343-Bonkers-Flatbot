@@ -8,7 +8,7 @@ bool wingsOut = false;
 bool intakeOut = false;
 bool ptoOn4bar = false;
 bool isFlywheelForward = false;
-bool parkOut = false;
+bool ratchetOut = false;
 bool stickCoast = false;
 // this stuff is for example autos, you should get rid of this and add your own devices here
 
@@ -17,7 +17,7 @@ pros::ADIDigitalOut wing2('A');
 pros::ADIDigitalOut intake1 ('C');
 pros::ADIDigitalOut intake2 ('E');
 pros::ADIDigitalOut pto ('D');
-pros::ADIDigitalOut park ('F');
+pros::ADIDigitalOut ratchet ('F');
 // this stuff is for example autos, you should get rid of this and add your own devices here
 
 pros::Motor stick (15, pros::E_MOTOR_GEARSET_36, true, pros::E_MOTOR_ENCODER_DEGREES);
@@ -39,7 +39,7 @@ pros::Motor rightTop(8, pros::E_MOTOR_GEARSET_06, false);
 pros::MotorGroup left_side_motors({leftFront, leftBack, leftTop});
 pros::MotorGroup right_side_motors({rightFront, rightFront, rightTop});
 
-pros::Imu inertial_sensor(11); 
+pros::Imu inertial_sensor(10); 
 
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 
@@ -54,7 +54,7 @@ Drive chassis (
   ,{6, 8, -9}
 
   // IMU Port
-  ,11
+  ,10
 
   // Wheel Diameter (Remember, 4" wheels are actually 4.125!)
   //    (or tracking wheel diameter)
