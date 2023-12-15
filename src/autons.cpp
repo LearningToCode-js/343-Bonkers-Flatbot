@@ -248,48 +248,138 @@ void offense() {
     
 }
 
-void defense() {
-    chassis.set_drive_pid(-50, DRIVE_SPEED); // Adjust distance as needed
-    chassis.wait_until(-47);
-    chassis.set_swing_pid(RIGHT_SWING, 90, TURN_SPEED);
-    chassis.wait_until(-44);
-    toggleWing();
-    chassis.wait_until(-88);
-    chassis.set_drive_pid(-27, DRIVE_SPEED); // Adjust distance as needed
-    chassis.wait_until(-25);
-    chassis.set_drive_pid(10, DRIVE_SPEED);
-    chassis.wait_until(8);
-
-    chassis.set_turn_pid(25, TURN_SPEED);
-    chassis.wait_until(23);
-
-    chassis.set_drive_pid(56, DRIVE_SPEED);
-    chassis.wait_until(54);
-    //Back at Spawn
-    chassis.set_swing_pid(LEFT_SWING, 90, TURN_SPEED);
-    chassis.wait_until(88);
-
-    chassis.set_drive_pid(20, DRIVE_SPEED);
-    chassis.wait_until(10);
+void defenseElim() {
+    // toggleWing();
     stickUp();
-    chassis.wait_until(18);
-
-    chassis.set_turn_pid(20, TURN_SPEED);
-    chassis.wait_until(18);
-    chassis.set_drive_pid(-10, DRIVE_SPEED);
-    chassis.wait_until(-8);
-
-    stickReset();
-    chassis.set_swing_pid(LEFT_SWING, -90, TURN_SPEED);
-    chassis.wait_until(88);
+    chassis.set_drive_pid(55, 127);
+    pros::delay(100);
+    chassis.wait_until(30);
     stickDown();
-    chassis.set_drive_pid(20, DRIVE_SPEED);
-    chassis.wait_until(18);
-    chassis.set_turn_pid(30, TURN_SPEED);
-    chassis.wait_until(28);
+    chassis.wait_until(53);
     stickReset();
-    chassis.set_drive_pid(35, DRIVE_SPEED);
+
+    chassis.set_drive_pid(-55, 127);
+    pros::delay(100);
+    chassis.wait_until(-53);
+
+    stickUp();
+    chassis.set_turn_pid(77, TURN_SPEED);
+    pros::delay(100);
+    chassis.wait_until(75);
+
+    stickReset();
+    pros::delay(200);
+
+    chassis.set_drive_pid(-5, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_until(-3);
+
+    chassis.set_swing_pid(ez::RIGHT_SWING, 115, -DRIVE_SPEED);
+    pros::delay(100);
     chassis.wait_drive();
+
+    chassis.set_drive_pid(-22, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_until(-20);
+
+    chassis.set_swing_pid(ez::RIGHT_SWING, 160, -DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_drive_pid(-18, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_drive_pid(14, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    // toggleWing();
+    chassis.set_swing_pid(ez::RIGHT_SWING, 115, -DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_drive_pid(12, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_turn_pid(75, 75);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    // toggleWing();
+
+    chassis.set_turn_pid(115, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_drive_pid(6, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+
+    chassis.set_swing_pid(ez::RIGHT_SWING, 75, -DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_drive_pid(38, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_drive_pid(-36, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_swing_pid(ez::RIGHT_SWING, 115, -DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_drive_pid(-7, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_until(-5);
+
+
+    // chassis.set_drive_pid(-50, DRIVE_SPEED); // Adjust distance as needed
+    // chassis.wait_until(-47);
+    // chassis.set_swing_pid(RIGHT_SWING, 90, TURN_SPEED);
+    // chassis.wait_until(-44);
+    // toggleWing();
+    // chassis.wait_until(-88);
+    // chassis.set_drive_pid(-27, DRIVE_SPEED); // Adjust distance as needed
+    // chassis.wait_until(-25);
+    // chassis.set_drive_pid(10, DRIVE_SPEED);
+    // chassis.wait_until(8);
+
+    // chassis.set_turn_pid(25, TURN_SPEED);
+    // chassis.wait_until(23);
+
+    // chassis.set_drive_pid(56, DRIVE_SPEED);
+    // chassis.wait_until(54);
+    // //Back at Spawn
+    // chassis.set_swing_pid(LEFT_SWING, 90, TURN_SPEED);
+    // chassis.wait_until(88);
+
+    // chassis.set_drive_pid(20, DRIVE_SPEED);
+    // chassis.wait_until(10);
+    // stickUp();
+    // chassis.wait_until(18);
+
+    // chassis.set_turn_pid(20, TURN_SPEED);
+    // chassis.wait_until(18);
+    // chassis.set_drive_pid(-10, DRIVE_SPEED);
+    // chassis.wait_until(-8);
+
+    // stickReset();
+    // chassis.set_swing_pid(LEFT_SWING, -90, TURN_SPEED);
+    // chassis.wait_until(88);
+    // stickDown();
+    // chassis.set_drive_pid(20, DRIVE_SPEED);
+    // chassis.wait_until(18);
+    // chassis.set_turn_pid(30, TURN_SPEED);
+    // chassis.wait_until(28);
+    // stickReset();
+    // chassis.set_drive_pid(35, DRIVE_SPEED);
+    // chassis.wait_drive();
 
     
 
@@ -310,26 +400,46 @@ void defense() {
 }
 
 void defenseQual() {
-    chassis.set_drive_pid(20, DRIVE_SPEED);
+    chassis.set_drive_pid(30, DRIVE_SPEED);
+    pros::delay(100);
     chassis.wait_until(10);
     stickUp();
-    chassis.wait_until(18);
-
-    chassis.set_turn_pid(20, TURN_SPEED);
-    chassis.wait_until(18);
-    chassis.set_drive_pid(-10, DRIVE_SPEED);
-    chassis.wait_until(-8);
-
+    chassis.wait_until(23);
     stickReset();
-    chassis.set_swing_pid(LEFT_SWING, -90, TURN_SPEED);
-    chassis.wait_until(88);
+    
+    chassis.wait_drive();
+
+    chassis.set_turn_pid(45, TURN_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+    chassis.set_drive_pid(10, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+    stickUp();
+
+    chassis.set_turn_pid(28, TURN_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+    chassis.set_drive_pid(-18, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+    stickReset();
+
+
+    chassis.set_swing_pid(RIGHT_SWING, -35, TURN_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
     stickDown();
-    chassis.set_drive_pid(20, DRIVE_SPEED);
-    chassis.wait_until(18);
-    chassis.set_turn_pid(30, TURN_SPEED);
-    chassis.wait_until(28);
+    chassis.set_drive_pid(-10, DRIVE_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
+
+    chassis.set_turn_pid(-45, TURN_SPEED);
+    pros::delay(100);
+    chassis.wait_drive();
     stickReset();
-    chassis.set_drive_pid(35, DRIVE_SPEED);
+    chassis.set_drive_pid(-35, DRIVE_SPEED);
+    pros::delay(100);
     chassis.wait_drive();
 }
 // example auto for clearing matchload area and touching pole
